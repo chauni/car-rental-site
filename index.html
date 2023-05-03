@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACME Car Rental</title>
+  </head>
+  <body>
+    <h1>ACME Car Rental</h1>
+
+    <div>
+      Pickup date: <input type="date" id="pickupDate" /><br />
+      Number of days: <input type="number" id="numOfDays" /><br />
+    </div>
+
+    <fieldset>
+      <legend>Options:</legend>
+      <input type="checkbox" id="tollTag" name="option" value="tolltag" /><label
+        for="tollTag"
+        >Electronic Toll Tag ($3.95/day)</label
+      ><br />
+      <input type="checkbox" id="gps" name="option" value="gps" /><label
+        for="gps"
+        >GPS ($2.95/day)</label
+      ><br />
+      <input type="checkbox" id="roadsideAst" name="option" value="ra" /><label
+        for="roadsideAst"
+        >Roadside Assistance ($2.95/day)</label
+      ><br />
+    </fieldset>
+
+    <fieldset>
+      <legend>Under 25?</legend>
+      <input type="radio" id="not25" name="ageCheck" /><label for="not25"
+        >No</label
+      ><br />
+      <input type="radio" id="yes25" name="ageCheck" /><label for="yes25"
+        >Yes</label
+      ><br />
+    </fieldset>
+
+    <input type="button" id="estimateTotalBtn" value="Estimate Total Cost" />
+
+    <div>
+      <p>Car rental: <span id="carRentalOutput"></span></p>
+      <p>Options: <span id="optionsOutput"></span></p>
+      <p>Under 25 surcharge: <span id="ageSurcharge"></span></p>
+      <p>Total due: <span id="totalCostOutput"></span></p>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
