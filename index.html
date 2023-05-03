@@ -5,48 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ACME Car Rental</title>
+
+    <style>
+      .main-container {
+        border: 1px solid lightblue;
+        width: 600px;
+        padding: 30px;
+      }
+
+      fieldset {
+        margin: 20px;
+      }
+
+      .dateinputs {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      h1 {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h1>ACME Car Rental</h1>
+    <div class="main-container">
+      <h1>ACME Car Rental</h1>
 
-    <div>
-      Pickup date: <input type="date" id="pickupDate" /><br />
-      Number of days: <input type="number" id="numOfDays" /><br />
-    </div>
+      <hr />
 
-    <fieldset>
-      <legend>Options:</legend>
-      <input type="checkbox" id="tollTag" name="option" value="tolltag" /><label
-        for="tollTag"
-        >Electronic Toll Tag ($3.95/day)</label
-      ><br />
-      <input type="checkbox" id="gps" name="option" value="gps" /><label
-        for="gps"
-        >GPS ($2.95/day)</label
-      ><br />
-      <input type="checkbox" id="roadsideAst" name="option" value="ra" /><label
-        for="roadsideAst"
-        >Roadside Assistance ($2.95/day)</label
-      ><br />
-    </fieldset>
+      <div class="dateinputs">
+        Pickup date: <input type="date" id="pickupDate" /> Number of days:
+        <input type="number" id="numOfDays" />
+      </div>
 
-    <fieldset>
-      <legend>Under 25?</legend>
-      <input type="radio" id="not25" name="ageCheck" /><label for="not25"
-        >No</label
-      ><br />
-      <input type="radio" id="yes25" name="ageCheck" /><label for="yes25"
-        >Yes</label
-      ><br />
-    </fieldset>
+      <fieldset>
+        <legend>Options:</legend>
+        <input
+          type="checkbox"
+          id="tollTag"
+          name="option"
+          value="tolltag"
+        /><label for="tollTag">Electronic Toll Tag ($3.95/day)</label><br />
+        <input type="checkbox" id="gps" name="option" value="gps" /><label
+          for="gps"
+          >GPS ($2.95/day)</label
+        ><br />
+        <input
+          type="checkbox"
+          id="roadsideAst"
+          name="option"
+          value="ra"
+        /><label for="roadsideAst">Roadside Assistance ($2.95/day)</label><br />
+      </fieldset>
 
-    <input type="button" id="estimateTotalBtn" value="Estimate Total Cost" />
+      <fieldset>
+        <legend>Are you 25 or older?</legend>
+        <input type="radio" id="not25" name="ageCheck" /><label for="not25"
+          >No</label
+        ><br />
+        <input type="radio" id="yes25" name="ageCheck" /><label for="yes25"
+          >Yes</label
+        ><br />
+      </fieldset>
 
-    <div>
-      <p>Car rental: <span id="carRentalOutput"></span></p>
-      <p>Options: <span id="optionsOutput"></span></p>
-      <p>Under 25 surcharge: <span id="ageSurcharge"></span></p>
-      <p>Total due: <span id="totalCostOutput"></span></p>
+      <input type="button" id="estimateTotalBtn" value="Estimate Total Cost" />
+
+      <div>
+        <p>Car rental: <span id="carRentalOutput"></span></p>
+        <p>Options: <span id="optionsOutput"></span></p>
+        <p>Under 25 surcharge: <span id="ageSurcharge"></span></p>
+        <p>Total due: <span id="totalCostOutput"></span></p>
+        <p>Day of pickup: <span id="userDateOutput"></span></p>
+      </div>
     </div>
 
     <script src="./index.js"></script>
