@@ -24,7 +24,6 @@ function onEstimateBtnClicked() {
     const basicCarRental = 29.99 * userNumOfDays;
 
     let extraPerDay = 0;
-    function optionsInput() {
      if (tollTagEl.checked == true) {
         extraPerDay += 3.95
     } if (gpsEl.checked == true) {
@@ -32,26 +31,22 @@ function onEstimateBtnClicked() {
     } if (roadsideAstEl.checked == true) {
         extraPerDay += 2.95
     } 
-    }
+    
 
-    let surchargeAmount = 1;
-    function ageCheckInput() {
+    let surchargeAmount = 0;
         if (not25RadioEl.checked == true) {
-            surchargeAmount *= .30
-        } else {
-            surchargeAmount *= 0
-        }
+            surchargeAmount * .30
     }
 
     const carRentalOutputEl = document.getElementById('carRentalOutput')
     carRentalOutputEl.innerHTML = basicCarRental
 
-    optionsInput()
+    
     const optionsOutputEl = document.getElementById('optionsOutput');
     const optionsAdded = extraPerDay * userNumOfDays
     optionsOutputEl.innerHTML = optionsAdded.toFixed(2)
 
-    ageCheckInput()
+    
     const ageSurchargeEl = document.getElementById('ageSurcharge')
     const surchargeApplied = surchargeAmount * basicCarRental
     ageSurchargeEl.innerHTML = surchargeApplied.toFixed(2);
